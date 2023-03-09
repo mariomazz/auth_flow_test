@@ -20,7 +20,7 @@ class AuthenticationScreen extends ConsumerWidget {
                 child: AutoSizeText(LocaleKeys.buttons_titles_login.tr()),
                 onPressed: () async {
                   await ref
-                      .read(loginScreenControllerProvider.notifier)
+                      .read(authenticationScreenControllerProvider.notifier)
                       .didTapLogin();
                 },
               ),
