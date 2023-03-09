@@ -1,0 +1,1 @@
+flutter build web --release && mkdir -p dist/web && cp -r build/web dist

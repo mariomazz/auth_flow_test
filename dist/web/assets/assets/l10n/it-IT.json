@@ -1,0 +1,32 @@
+{
+    "title": "test app",
+    "screens": {
+        "titles": {
+            "todos": "Todos Screen",
+            "photos": "Photos Screen",
+            "posts": "Posts Screen",
+            "users": "Users Screen",
+            "todo_detail": "Todo Detail",
+            "photo_detail": "Photo Detail",
+            "profile": "Profile"
+        }
+    },
+    "buttons": {
+        "titles": {
+            "go_to_todos_screen": "Todos",
+            "go_to_photos_screen": "Photos",
+            "go_to_posts_screen": "Posts",
+            "go_to_users_screen": "Users",
+            "login": "Login",
+            "logout": "Logout"
+        }
+    },
+    "errors": {
+        "messages": {
+            "default": "exception Error"
+        }
+    },
+    "common": {
+        "data_loaded": "Data Loaded"
+    }
+}

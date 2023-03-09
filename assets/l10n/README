@@ -1,0 +1,16 @@
+
+// TODO : install package
+
+    flutter pub add easy_localization
+
+// TODO : command for build .g.file
+
+    flutter pub run easy_localization:generate -S assets/l10n -f keys -O lib/src/localization -o locale_keys.g.dart
+
+
+EXAMPLE : 
+
+    const AutoSizeText(LocaleKeys.msg).tr(namedArgs: {
+        "name": "Mario Mazzarelli",
+        "body": "il mio bellissimo"
+    }),
