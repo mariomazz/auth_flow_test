@@ -1,1 +1,1 @@
-flutter build web --release && mkdir -p dist/web && cp -r build/web dist
+flutter build web --base-href="/" --release && mkdir -p dist/web && cp -r build/web dist
