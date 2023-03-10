@@ -22,6 +22,7 @@ abstract class  LocaleKeys {
   static const buttons_titles = 'buttons.titles';
   static const buttons = 'buttons';
   static const errors_messages_default = 'errors.messages.default';
+  static const errors_messages_redirect_uri_required = 'errors.messages.redirect_uri_required';
   static const errors_messages = 'errors.messages';
   static const errors = 'errors';
   static const common_data_loaded = 'common.data_loaded';

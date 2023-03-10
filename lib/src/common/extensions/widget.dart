@@ -6,6 +6,10 @@ extension ExtWidget on Widget {
     return Center(child: this);
   }
 
+  Widget size({double? width, double? height}) {
+    return SizedBox(width: width, height: height, child: this);
+  }
+
   Widget expand() {
     return SizedBox.expand(child: this);
   }

@@ -23,7 +23,8 @@
     },
     "errors": {
         "messages": {
-            "default": "exception Error"
+            "default": "exception Error",
+            "redirect_uri_required": "redirect uri required"
         }
     },
     "common": {

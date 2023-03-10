@@ -1,4 +1,4 @@
-import 'package:auto_size_text/auto_size_text.dart';
+import 'package:auth_flow_test/src/common/widgets/error_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -25,32 +25,39 @@ GoRouter goRouter(GoRouterRef ref) {
       ),
       GoRoute(
         path: loginRoute,
-        pageBuilder: (context, state) => _buildPageWithFadeTransition(
-          context: context,
-          state: state,
-          child: const LoginScreen(),
-        ),
+        pageBuilder: (context, state) {
+          final queryParameters = state.queryParametersAll
+              .map((key, value) => MapEntry(key.toLowerCase(), value));
+          if (!((queryParameters.keys.any((element) =>
+                  element.toLowerCase() == "redirectUri".toLowerCase())) &&
+              (queryParameters["redirectUri".toLowerCase()]?.isNotEmpty ??
+                  false))) {
+            return _buildPageWithFadeTransition(
+              context: context,
+              state: state,
+              child: ErrorScreen(
+                error: LocaleKeys.errors_messages_redirect_uri_required.tr(),
+              ),
+            );
+          }
+          final redirectUriAfterLogin =
+              (queryParameters['redirectUri'.toLowerCase()] ?? []).first;
+          return _buildPageWithFadeTransition(
+            context: context,
+            state: state,
+            child: LoginScreen(redirectUriAfterLogin: redirectUriAfterLogin),
+          );
+        },
       ),
     ],
     redirect: (context, state) async {
-      //AUTH MANAGER - REDIRECT
-      /* final isAuth = await authService.getCredentials() != null;
-      if (isAuth && state.location == authRoute) {
-        return rootRoute;
-      } else if (isAuth == false && state.location != authRoute) {
-        return authRoute;
-      } */
-
       return null;
     },
     debugLogDiagnostics: true,
     errorPageBuilder: (context, state) => MaterialPage<void>(
       key: state.pageKey,
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: AutoSizeText(LocaleKeys.errors_messages_default.tr()),
-        ),
+      child: ErrorScreen(
+        error: LocaleKeys.errors_messages_default.tr(),
       ),
     ),
   );
