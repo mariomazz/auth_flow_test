@@ -11,7 +11,6 @@ class LoginService {
     initialQuery["code"] = code;
     final uriAp = uri.replace(queryParameters: initialQuery);
     html.window.location.href = uriAp.toString();
-    html.window.postMessage({"code": code}, "*");
   }
 }
 
