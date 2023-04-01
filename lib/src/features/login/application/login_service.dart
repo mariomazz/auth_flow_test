@@ -10,7 +10,8 @@ class LoginService {
     final code = faker.randomGenerator.string(32, min: 32);
     initialQuery["code"] = code;
     final uriAp = uri.replace(queryParameters: initialQuery);
-    html.window.location.href = uriAp.toString();
+    // html.window.location.href = uriAp.toString();
+    html.window.location.replace(uriAp.toString());
   }
 }
 

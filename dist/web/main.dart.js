@@ -39965,7 +39965,7 @@ r=A.z(t.N,t.z)
 r.R(0,s.gow())
 r.n(0,"code",$.aBM().cx.Sf(32,32))
 q=s.Q4(0,r)
-window.location.href=q.gB3()
+window.location.replace(q.gB3())
 this.sFT(0,new A.uY(new A.a5t(),!1,null,null,t.Iu))}}
 A.a5t.prototype={
 $0(){var s=t.z
